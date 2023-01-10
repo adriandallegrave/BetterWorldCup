@@ -1,0 +1,70 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = $"Caaz {Model.Version}";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Jogos</h1>
+</div>
+
+<table style="text-align:center" class="table table-hover table-bordered table-sm">
+    <thead style="position:sticky; top:0">
+        <tr class="table-dark">
+            <td>Data</td>
+            <td>Mandante</td>
+            <td>Resultado</td>
+            <td>Visitante</td>
+            <td>Valor do Acerto</td>
+            <td>Valor do Erro</td>
+
+            @foreach(var user in Model.Users)
+            {
+                <td>@user</td>
+            }
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.TableItems)
+        {
+            <tr>
+                <td>@string.Format($"{@item.Date.Day}/{@item.Date.Month} - {@item.Date.Hour}h")</td>
+                <td>@item.HomeTeam</td>
+                <td>@item.Result</td>
+                <td>@item.AwayTeam</td>
+                <td>R$ @string.Format("{0:n2}", item.AmountWon)</td>
+                <td>R$ @string.Format("{0:n2}", item.AmountLost)</td>
+
+                @foreach(var bet in item.OrderedBets)
+                {
+                    @if (@bet == @item.Result)
+                    {
+                        <td style="color:white" class="bg-success">@bet</td>
+                    }
+                    else if (@item.Result == " x ")
+                    {
+                        <td>@bet</td>
+                    } 
+                    else
+                    {
+                        <td style="color:whitesmoke" class="bg-danger">@bet</td>
+                    }
+                }
+            </tr>
+        }
+        <tr class="table-dark">
+            <td>Data</td>
+            <td>Mandante</td>
+            <td>Resultado</td>
+            <td>Visitante</td>
+            <td>Valor do Acerto</td>
+            <td>Valor do Erro</td>
+
+            @foreach (var user in Model.Users)
+            {
+                <td>@user</td>
+            }
+
+        </tr>
+    </tbody>
+</table>

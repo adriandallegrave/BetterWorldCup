@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/betterdbserver/databases/Better_db",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:Better_db"
+    },
+    "apis1": {
+      "apiEndpoint": "https://betterapi.azure-api.net/api",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/BetterApi/apis/Better",
+      "type": "apis.azure"
+    }
+  }
+}

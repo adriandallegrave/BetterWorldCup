@@ -1,0 +1,16 @@
+﻿SELECT * FROM [Better].[dbo].[Accounts];
+SELECT * FROM [Better].[dbo].[Bets];
+SELECT * FROM [Better].[dbo].[Games];
+SELECT * FROM [Better].[dbo].[Teams];
+SELECT * FROM [Better].[dbo].[Transactions];
+
+
+SELECT * FROM [Better].[dbo].[__EFMigrationsHistory];
+SELECT * FROM [Better].[dbo].[AspNetUsers];
+SELECT * FROM [Better].[dbo].[Accounts];
+SELECT * FROM [Better].[dbo].[Bets];
+
+
+DELETE FROM [AspNetUsers];
+DELETE FROM [Accounts];
+DELETE FROM [Bets];

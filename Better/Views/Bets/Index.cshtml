@@ -1,0 +1,63 @@
+﻿@model BetsViewModel
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@{
+    ViewData["Title"] = "Caaz Apostas";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Apostas</h1>
+</div>
+
+@if (Model.UserHaveBets)
+{
+    <h5 style="text-align:center">Você já fez suas apostas</h5>
+}
+else
+{
+    <p class="alert-warning">@Model.Error</p>
+    <form id="betsForm" action="Bets" method="post">
+        <input name="UserMail" type="hidden" value="@Model.UserMail" class="form-control" />
+        <input name="UserName" type="text" value="Seu Nome" class="form-control" />
+
+        <table class="table table-hover table table-sm">
+            <thead>
+                <tr>
+                    <th>Apostas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Data</td>
+                    <td>Mandante</td>
+                    <td></td>
+                    <td></td>
+                    <td>Visitante</td>
+                </tr>
+
+                @foreach (var item in Model.TableItems)
+                {
+                    <tr>
+                        <td>@item.Date</td>
+                        <td>@item.HomeTeam</td>
+                        <td>
+                            <div class="form-group">
+                                <input name="(@item.MatchId)A" type="number" required value="0" class="form-control" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <input name="(@item.MatchId)B" type="number" required value="0" class="form-control" />
+                            </div>
+                        </td>
+                        <td>@item.AwayTeam</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+        <button type="submit" value="send" class="btn btn-primary">Submit</button>
+    </form>
+}

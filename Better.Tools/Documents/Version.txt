@@ -1,0 +1,65 @@
+﻿
+TODO:
+- Update match by API
+
+
+
+v1.1.0 - Management API
+	- post match results
+	- recalculate balance
+
+v1.1.1 - 
+	- fix for user being discounted when missed, even though there was no hits
+
+v1.2.0.beta - Management API
+	- delete all bets by user
+
+v1.2.1 -
+	- fix for saving just some bets while trying to cancel process
+
+v1.2.2 -
+	- beta release
+
+v1.2.3 -
+	- fix failing unit tests
+	- return null instead of default in Domain Services
+
+v1.3.0 - Version Control
+	- Add version count to Home Page
+
+v1.3.1 - 
+	- Log cached out from 5 to 10 minutes
+
+v1.4.0 - Results Page
+	- Results page available
+	- Format values as R$ 0.00 in all pages
+
+v1.5.0 - First Match
+	- Change table format
+	- Results format
+	- Hide Bets tab
+	- Show results to true
+
+v1.6.0 - Extras
+	- Page that manualy shows other bets
+
+v1.7.0 - Get Game By Name
+	- Find match Id by team names
+
+v1.7.1 - 
+	- Fix table panes
+
+v1.7.2 - 
+	- Format extra tables with partial results
+
+v1.7.3 -
+	- Results update
+	
+v1.7.4 -
+	- Results update
+	
+v1.7.5 -
+	- Results update
+
+v1.7.6 -
+	- Final results update

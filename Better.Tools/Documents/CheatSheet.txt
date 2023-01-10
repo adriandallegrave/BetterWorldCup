@@ -1,0 +1,37 @@
+﻿=====================================================================================================================> ADD NEW MIGRATION
+Add-Migration <migration-name> -Context BetterContext -Project Better.Persistence -StartupProject Better
+
+=====================================================================================================================> REMOVE LAST MIGRATION
+Remove-Migration -Context BetterContext -Project Better.Persistence -StartupProject Better
+
+=====================================================================================================================> UPDATE DATABASE
+Update-Database -Context BetterContext -Project Better.Persistence -StartupProject Better
+
+=====================================================================================================================> UNDO TO SPECIFIC MIGRATION
+Update-Database <migration-name> -Context BetterContext -Project Better.Persistence -StartupProject Better
+
+=====================================================================================================================> GENERATE SQL SCRIPT
+Script-Migration <migration-name>
+
+=====================================================================================================================> LIST ALL DOTNET TOOLS INSTALLED
+dotnet tool list
+
+
+
+First Migrations
+
+Add-Migration Initial -Context BetterContext -Project Better.Persistence -StartupProject Better
+Update-Database -Context BetterContext -Project Better.Persistence -StartupProject Better
+Remove-Migration -Context BetterContext -Project Better.Persistence -StartupProject Better
+
+Identity Migrations
+
+Add-Migration Identity -Context BetterContext -Project Better.Persistence -StartupProject Better
+Update-Database -Context BetterContext -Project Better.Persistence -StartupProject Better
+Remove-Migration -Context BetterContext -Project Better.Persistence -StartupProject Better
+
+Account Migrations
+
+Add-Migration Account -Context BetterContext -Project Better.Persistence -StartupProject Better
+Update-Database -Context BetterContext -Project Better.Persistence -StartupProject Better
+Remove-Migration -Context BetterContext -Project Better.Persistence -StartupProject Better

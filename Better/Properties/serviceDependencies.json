@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:Better_db"
+    },
+    "apis1": {
+      "type": "apis"
+    }
+  }
+}
